@@ -1,0 +1,56 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model SavedRecipes
+@{
+    ViewBag.Title = "Update Recipe";
+    Layout = "_Layout1";
+}
+
+<br />
+<br />
+<br />
+
+<div class="whole-wrap">
+    <div class="container">
+
+        <form asp-action="Update" asp-controller="Admin" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="RecipeID" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredients"></label>
+                <input asp-for="Ingredients" class="form-control" />
+            </div>
+            <!--<div class="form-group">
+                <label asp-for="Number"></label>
+                <input asp-for="Number" class="form-control" />
+            </div>-->
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" type="text" name="Description" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Instruction"></label>
+                <input asp-for="Instruction" type="text" name="Instruction" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Recipe Image</label>
+                <partial name="_InsertImage" />
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<br />

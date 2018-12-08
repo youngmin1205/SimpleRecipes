@@ -1,0 +1,46 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="~/css/imagestyles.css" />
+    <link rel="stylesheet" href="~/css/linearicons.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/reviewForm.css">
+
+</head>
+<body>
+
+    <h2>Simple Recipes</h2>
+    <ul>
+        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li><a asp-action="DataPage" asp-controller="Home">All Recipes</a></li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li><a asp-action="Index" asp-controller="Admin">Add / Update Recipe</a></li>
+            <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+        }
+        else
+        {
+            <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+        }
+
+    </ul>
+    @RenderBody()
+</body>
+</html>
+

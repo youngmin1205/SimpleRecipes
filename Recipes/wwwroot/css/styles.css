@@ -1,0 +1,101 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    list-style: none;
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+    li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+        li a:hover:not(.active) {
+            background-color: #0094ff;
+        }
+
+.active {
+    background-color: #0094ff;
+}
+
+img {
+    padding-top: 50px;
+    width: 33%;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+.thead {
+    background-color: #B3E4E8;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid black;
+    display: inline-block;
+    /* box-sizing: border-box;*/
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit], input[type=button], input[type=number], button {
+    background-color: #0094ff;
+    color: white;
+    border: none;
+    float: right;
+    padding: 14px 20px;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.Details {
+    width: 10px;
+}
+
+textarea {
+    height: 150px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+/*
+.container {
+  padding: 20px;
+}*/

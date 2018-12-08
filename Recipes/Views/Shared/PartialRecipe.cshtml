@@ -1,0 +1,44 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model Recipes.Models.SavedRecipes
+
+<h2>Add your Recipe</h2>
+<div class=" container">
+    <form asp-action="PartialRecipe" asp-controller="Admin" method="post" enctype="multipart/form-data">
+        <label asp-for="Name">
+            Recipe Name:
+        </label>
+        <input type="text" name="Name" />
+
+        <label asp-for="Ingredients">
+            Ingredients:
+        </label>
+        <input type="text" name="Ingredients" />
+
+        <label asp-for="Description">
+            Description:
+        </label>
+        <input type="text" name="Description" />
+
+        <label asp-for="Instruction">
+
+            Instruction:
+        </label>
+
+        <input type="file" name="pic" /><br />
+
+
+        <textarea name="Instruction"></textarea>
+
+        <button type="submit" class="button1">Save</button>
+
+        <a class="button1" asp-controller="Home" asp-action="Index">Cancel</a>
+
+    </form>
+</div>
+
+

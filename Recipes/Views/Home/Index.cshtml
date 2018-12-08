@@ -1,0 +1,27 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@{
+    Layout = "_Layout1";
+    ViewBag.Title = "Simple Recipes Home Page";
+}
+
+<section class="banner-area relative" id="home">
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-start">
+            <div class="banner-content col-lg-8 col-md-12">
+                <h4 class="text-white text-uppercase">Wide Selection of Choice</h4>
+                <h1>
+                    Simple Recipes
+                </h1>
+                <p class="text-white">
+                    Find and share everyday cooking inspiration from Simple Recipes
+                </p>
+                <a asp-action="DataPage" asp-controller="Home" class="primary-btn header-btn text-uppercase">Check Our Recipes</a>
+            </div>
+        </div>
+    </div>
+</section>

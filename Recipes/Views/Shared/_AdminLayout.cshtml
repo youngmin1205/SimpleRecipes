@@ -1,0 +1,54 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="~/css/imagestyles.css" />
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
+</head>
+<body class="m-1 p-1">
+    <ul>
+        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li><a asp-action="DataPage" asp-controller="Home">All Recipes</a></li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li><a asp-action="Index" asp-controller="Admin">Add / Update Recipe</a></li>
+            <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+        }
+        else
+        {
+            <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+        }
+
+    </ul>
+
+    @*<div class="bg-info p-2">
+            <h3>@ViewBag.Title</h3>
+            <div class="col-2">
+                <a class="btn btn-sm btn-primary"
+                   asp-action="Logout" asp-controller="Account">Log Out</a>
+            </div>
+        </div>*@
+
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+    @RenderBody()
+</body>
+</html>

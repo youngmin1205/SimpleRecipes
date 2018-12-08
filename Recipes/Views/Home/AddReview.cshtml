@@ -1,0 +1,30 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model ReviewViewModel
+@{
+    Layout = "_Layout1";
+}
+
+<br />
+<br />
+<br />
+
+<div class="whole-wrap">
+    <div class="container">
+        <form asp-action="AddReview" asp-controller="Home" method="post">
+            <label asp-for="@Model.Review.Body">
+                <strong>Add Review:</strong><br />
+                <textarea asp-for="@Model.Review.Body" placeholder=" Add Review Here..."></textarea>
+            </label>
+            <input type="hidden" asp-for="@Model.RecipeID" />
+            <button type="submit" class="button1">Submit</button>
+
+        </form>
+    </div>
+</div>
+<br />
+<br />

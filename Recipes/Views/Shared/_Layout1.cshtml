@@ -1,0 +1,116 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/linearicons.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/reviewForm.css">
+    <!-- end of CSS -->
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a asp-action="Index"><img src="~/img/repLogo.png" alt="" title="" /></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                        <li><a asp-action="DataPage" asp-controller="Home">All Recipes</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a asp-action="Index" asp-controller="Admin">Add / Update Recipe</a></li>
+                            <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+                        }
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header><!-- #header -->
+    <!-- start background for the content -->
+
+    @RenderBody()
+
+    <!-- end background for the content -->
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4 class="text-white">Links</h4>
+                        <div class="footer-bottom d-flex align-items-center">
+                            <ul>
+                                <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                                <li><a asp-action="DataPage" asp-controller="Home">All Recipes</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a asp-action="Index" asp-controller="Admin">Add / Update Recipe</a></li>
+                                    <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4 class="text-white">Copyright</h4>
+                        <div class="footer-bottom">
+                            <p class="footer-text m-0">
+                                Group 9<br />Centennial College<br />Fall 2018<br />COMP246 - Web Application Development<br />Term Assignment<br />Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved<br />This web design template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> <br />by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer Area -->
+    <!-- JS Scripts -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="~/js/easing.min.js"></script>
+    <script src="~/js/hoverIntent.js"></script>
+    <script src="~/js/superfish.min.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/parallax.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>

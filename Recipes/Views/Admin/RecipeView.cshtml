@@ -1,0 +1,41 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model SavedRecipes
+@{
+    Layout = "_Layout";
+
+}
+
+<br />
+<br />
+<table>
+    <tr>
+        <td>Recipe ID</td>
+        <td>@Model.RecipeID</td>
+    </tr>
+    <tr>
+        <td> Recipe Name</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td>Ingredient</td>
+        <td>@Model.Ingredients</td>
+    </tr>
+    <!-- <tr>
+         <td>Number of serving</td>
+         <td> @Model.Number</td>
+     </tr>-->
+    <tr>
+        <td>Description</td>
+        <td> @Model.Description</td>
+    </tr>
+    <tr>
+        <td>Instruction</td>
+        <td>@Model.Instruction</td>
+    </tr>
+
+</table>

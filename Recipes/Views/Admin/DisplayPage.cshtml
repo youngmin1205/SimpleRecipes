@@ -1,0 +1,100 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model SavedRecipes
+<br />
+<br />
+
+@{
+    var path = Model.Name + ".jpg";
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="~/css/imagestyles.css" />
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Recipe Image</td>
+            <td>
+                <img src="~/@path" />
+            </td>
+        </tr>
+        <tr>
+            <td>Recipe ID</td>
+            <td>@Model.RecipeID</td>
+        </tr>
+        <tr>
+            <td> Recipe Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Ingredient</td>
+            <td>@Model.Ingredients</td>
+        </tr>
+        <!--<tr>
+            <td>Number of serving</td>
+            <td> @Model.Number</td>
+        </tr>-->
+        package Example05;
+
+
+        <tr>
+            <td>Description</td>
+            <td> @Model.Description</td>
+        </tr>
+        <tr>
+            <td>Instruction</td>
+            <td>@Model.Instruction</td>
+        </tr>
+
+        <tr>
+            <td>Time Edited</td>
+            <td>@Model.LastUpdate</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>@Model.LastUser</td>
+        </tr>
+
+
+
+    </table>
+    <a asp-action="AddReview" class="button1" asp-controller="Home" asp-route-id="@Model.RecipeID">Add Review</a>
+    <br />
+    <br />
+    <h2>Reviews for @Model.Name:</h2>
+    <table class="table">
+        <thead>
+            <tr class="thead">
+                <th scope="col">Date</th>
+                <th scope="col">Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Reviews == null)
+            {
+
+            }
+            else
+            {
+                @foreach (var r in Model.Reviews)
+                {
+                    <tr>
+                        <td>@r.ReviewDate</td>
+                        <td>@r.Body</td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</body>

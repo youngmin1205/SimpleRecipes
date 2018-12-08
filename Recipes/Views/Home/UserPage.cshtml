@@ -1,0 +1,56 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "User Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+    <title>UserPage</title>
+
+</head>
+
+<body>
+    <h2>Add your Information</h2>
+    <form>
+
+        <div class=" container">
+
+            <label for="UserName">Your name:</label>
+
+            <input type="text" name="UserName" />
+
+            <label for="Email">Your Email: </label>
+
+            <input type="text" name="Email" />
+
+            <label for="Password">
+                Your password:
+            </label>
+
+            <input type="text" name="Password" />
+
+
+
+            <!--<button type="submit">Register</button>-->
+
+            <input type="submit" class="button1" value="Submit">
+            <a asp-action="Index" asp-controller="Home" class="button1" value="Cancel">Cancel</a>
+
+
+
+        </div>
+    </form>
+
+</body>
+</html>

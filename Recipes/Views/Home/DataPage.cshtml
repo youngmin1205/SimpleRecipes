@@ -1,0 +1,54 @@
+﻿<!--
+ Course: COMP229-001-Project-v1
+ Group#: 9
+ Members: Asha Saha, Janelle Baetiong, Youngshin Min
+ -->
+
+@model IEnumerable<SavedRecipes>
+@{
+    Layout = "_Layout1";
+    ViewBag.Title = "List of Recipes";
+}
+
+<br />
+<br />
+<br />
+
+<div class="whole-wrap">
+    <div class="container">
+
+        <h2>All Recipes</h2>
+
+        <table class="table">
+            <thead>
+                <tr class="thead">
+
+                    <th scope="col">Recipe Name</th>
+
+                    <th scope="col">Description</th>
+
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var r in Model)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+
+                        <td>@r.Description</td>
+
+                        <td>
+                            <a asp-action="DisplayPage" asp-controller="Home" class="button1" asp-route-id="@r.RecipeID">View</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<br />
+<br />
