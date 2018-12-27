@@ -1,6 +1,6 @@
 # SimpleRecipes
 
-Web application for recipes. Built using ASP.NET.
+School Project. Web application for recipes. Built using ASP.NET.
 
 ## Images:
 
